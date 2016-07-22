@@ -24,7 +24,7 @@ getChargeLinux = do
 -- | get power state from ACPI on linux
 getPowerLinux :: IO Power
 getPowerLinux = do
-    let path = "/sys/bus/acpi/drivers/ac/ACPI0003:00/power_supply/AC/online"
+    let path = "/sys/bus/acpi/drivers/ac/ACPI0003:00/power_supply/AC0/online"
     s <- readFile path
     return $ case (read s) of 
                 0 -> Battery
